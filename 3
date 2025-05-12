@@ -1,0 +1,55 @@
+/******************************************************************************
+
+Faça um algoritmo para obter o salário e o código do cargo de um funcionário e depois calcular o aumento
+e o novo salário de acordo com a tabela. Se o cargo não estiver na tabela, o aumento será de 40%. No
+final, mostrar o cargo, o salário antigo, o novo salário e o aumento.
+Código Cargo Percentual
+
+101 Supervisor 10%
+102 Engenheiro 20%
+103 Técnico 30%
+
+Casos de teste:
+a) Para o salário de R$ 5.000,00 e código igual a “101”, será apresentado o cargo de “Supervisor”, o salário
+antigo de R$ 5.000,00, o novo salário de R$ 5.500,00 e o aumento de R$ 500,00; 
+*******************************************************************************/
+#include <stdio.h>
+
+int main() {
+    int codigo;
+    float salario=0, novo_salario=0, aumento=0;
+    int cargo_valido = 1; 
+
+    printf("Digite o salário do funcionário: R$ ");
+    scanf("%f", &salario);
+
+    printf("Digite o código do cargo (101, 102 ou 103): ");
+    scanf("%d", &codigo);
+
+
+    if (codigo == 101) {
+        aumento = salario * 0.10;
+        novo_salario = salario + aumento;
+        printf("\nCargo: Supervisor\n");
+    } else if (codigo == 102) {
+        aumento = salario * 0.20;
+        novo_salario = salario + aumento;
+        printf("\nCargo: Engenheiro\n");
+    } else if (codigo == 103) {
+        aumento = salario * 0.30;
+        novo_salario = salario + aumento;
+        printf("\nCargo: Técnico\n");
+    } else {
+        aumento = salario * 0.40;
+        novo_salario = salario + aumento;
+        printf("\nCargo: Cargo não cadastrado\n");
+        cargo_valido = 0;
+    }
+
+
+    printf("Salário antigo: R$ %.2f\n", salario);
+    printf("Aumento: R$ %.2f\n", aumento);
+    printf("Novo salário: R$ %.2f\n", novo_salario);
+
+    return 0;
+}
