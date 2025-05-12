@@ -1,0 +1,64 @@
+/******************************************************************************
+faça um algoritmo para mostrar um menu com as opções de um cardápio de restaurante ao usuário e
+obter o prato desejado. Após a escolha do prato, perguntar ao usuário se deseja pagar a gorjeta do garçom
+de 10% sobre o valor do prato e mostrar o valor final de acordo com a resposta.
+Código Prato Valor
+
+1 Picanha 25,00
+2 Lasanha 20,00
+3 Strogonoff 18,00
+4 Bife acebolado 15,00
+5 Pão com ovo 5,00
+
+Casos de teste:
+a) Para opção com código igual a 2 e com pagamento de gorjeta do garçom, o valor final é R$ 22,00;
+b) Para opção com código igual a 4 e sem pagamento de gorjeta do garçom, o valor final é R$ 15,00. 
+*******************************************************************************/
+#include <stdio.h>
+
+int main() {
+    int codigo, pagar_gorjeta;
+    float valor = 0, gorjeta = 0, valor_final = 0;
+
+    printf("CARDÁPIO:\n");
+    printf("CÓDIGO  PRATO               VALOR\n");
+    printf("1       Picanha             R$ 25,00\n");
+    printf("2       Lasanha             R$ 20,00\n");
+    printf("3       Strogonoff          R$ 18,00\n");
+    printf("4       Bife acebolado      R$ 15,00\n");
+    printf("5       Pão com ovo         R$ 5,00\n");
+
+
+    printf("\nDigite o código do prato (1 a 5): ");
+    scanf("%d", &codigo);
+
+
+    if (codigo == 1) {
+        valor = 25.00;
+    } else if (codigo == 2) {
+        valor = 20.00;
+    } else if (codigo == 3) {
+        valor = 18.00;
+    } else if (codigo == 4) {
+        valor = 15.00;
+    } else if (codigo == 5) {
+        valor = 5.00;
+    } else {
+        printf("Código inválido.\n");
+        return 1; // encerra o programa
+    }
+
+    // Pergunta sobre a gorjeta
+    printf("Deseja pagar a gorjeta de 10%% para o garçom? (1 = Sim, 0 = Não): ");
+    scanf("%d", &pagar_gorjeta);
+
+    if (pagar_gorjeta == 1) {
+        gorjeta = valor * 0.10;
+    }
+
+    valor_final = valor + gorjeta;
+
+    printf("Valor final a pagar: R$ %.2f\n", valor_final);
+
+    return 0;
+}
