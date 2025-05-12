@@ -1,0 +1,50 @@
+/******************************************************************************
+
+Elabore um algoritmo para ler um número inteiro de 1 a 7 e informar o dia da semana correspondente,
+sendo domingo o dia de número 1. Se o número não corresponder a um dia da semana, mostrar uma
+mensagem de erro.
+Casos de teste:
+a) Para o número do dia da semana igual a 1, será apresentada a mensagem “Domingo”;
+b) Para o número do dia da semana igual a 6, será apresentada a mensagem “Sexta-feira”;
+c) Para o número do dia da semana igual a 9, será apresentada a mensagem “O número informado não
+corresponde a um dia da semana”. 
+*******************************************************************************/
+#include <stdio.h>
+
+int main() {
+    int dia = 0;
+
+   
+    printf("Digite um número de 1 a 7: ");
+    scanf("%d", &dia);
+
+ 
+    switch (dia) {
+        case 1:
+            printf("Domingo\n");
+            break;
+        case 2:
+            printf("Segunda-feira\n");
+            break;
+        case 3:
+            printf("Terça-feira\n");
+            break;
+        case 4:
+            printf("Quarta-feira\n");
+            break;
+        case 5:
+            printf("Quinta-feira\n");
+            break;
+        case 6:
+            printf("Sexta-feira\n");
+            break;
+        case 7:
+            printf("Sábado\n");
+            break;
+        default:
+            printf("O número informado não corresponde a um dia da semana.\n");
+            break;
+    }
+
+    return 0;
+}
